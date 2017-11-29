@@ -12,11 +12,16 @@ public class AllAdvertsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_adverts);
-
         txt=(TextView)findViewById(R.id.tv1);
         Bundle extras = getIntent().getExtras();
-        txt.setText(extras.getString("session"))   ;
-setTitle(extras.getString("session"));
+        if(extras.getString("session")=="Ev İlanları") {
+            setContentView(R.layout.evilan);
+        }
+        else if(extras.getString("session")=="Araba İlanları"){
+            setContentView(R.layout.arabailan);
+        }
+      /*  txt.setText(extras.getString("session"))   ;
+setTitle(extras.getString("session"));*/
+
     }
 }
