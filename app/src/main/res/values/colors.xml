@@ -8,4 +8,6 @@
     <color name="selected_color">#528be7</color>
     <color name="unselected_color">#bac4c4</color>
     <color name="black">#000000</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_300">#E0E0E0</color>
 </resources>

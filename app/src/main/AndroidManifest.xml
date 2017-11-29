@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ecommerce.bitirme.ecommerce">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/wewe_72x72"
@@ -13,11 +18,7 @@
             android:name=".Activity.DasboardActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.OfferActivity" />
         <activity android:name=".Activity.AllAdvertsActivity" />
@@ -29,7 +30,15 @@
         <activity
             android:name=".Activity.katagoriactivity"
             android:label="İlan Ver" />
-        <activity android:name=".Activity.AddAdvert"></activity>
+        <activity android:name=".Activity.AddAdvert" />
+
+        <activity android:name=".Activity.Giris">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
