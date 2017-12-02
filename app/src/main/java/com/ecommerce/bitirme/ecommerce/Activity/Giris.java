@@ -1,8 +1,8 @@
 package com.ecommerce.bitirme.ecommerce.Activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,7 +13,6 @@ import com.google.android.gms.common.SignInButton;
 public class Giris extends AppCompatActivity implements View.OnClickListener {
     public Button btn_uyeliksiz;
     public SignInButton btn_googleSignIn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,21 +20,20 @@ public class Giris extends AppCompatActivity implements View.OnClickListener {
         navi();
 
         btn_uyeliksiz.setOnClickListener(this);
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+      /*  GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
-                .build();
+                .build();*/
 
     }
-
-    public void navi() {
+    public void navi(){
         btn_uyeliksiz = (Button) findViewById(R.id.uyeliksiz);
         btn_googleSignIn = (SignInButton) findViewById(R.id.signIn);
     }
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(this, DasboardActivity.class);
+        Intent intent = new Intent(this,DasboardActivity.class);
         startActivity(intent);
     }
 }

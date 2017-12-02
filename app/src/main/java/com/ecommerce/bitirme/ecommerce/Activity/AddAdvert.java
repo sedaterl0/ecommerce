@@ -12,32 +12,31 @@ import android.widget.TextView;
 import com.ecommerce.bitirme.ecommerce.R;
 
 public class AddAdvert extends AppCompatActivity {
-    TextView ilan;
-    ArrayAdapter<String> arrayAdapter;
-
+    Spinner spinner;
+   // TextView ilan;
+    TextView ilanadi;
     String[] ilantipi = new String[]{"Satılık", "Kiralık", "Günlük Kiralık", "Devren Satılık"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_advert);
-        TextView ilanadi = (TextView) findViewById(R.id.ilanadi);
+        ilanadi = (TextView) findViewById(R.id.ilanadi);
         Bundle extras = getIntent().getExtras();
         ilanadi.setText(extras.getString("session"));
         ilanadi.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.advert_type_spinner);
 
-
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, ilantipi);
-        
+       // ilan=(TextView) findViewById(R.id.ilan);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item, ilantipi);
+       // arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
         spinner.setAdapter(arrayAdapter);
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                  ilan.setText(adapterView.getSelectedItem().toString());
+                 // ilan.setText(adapterView.getSelectedItem().toString());
 
 
             }

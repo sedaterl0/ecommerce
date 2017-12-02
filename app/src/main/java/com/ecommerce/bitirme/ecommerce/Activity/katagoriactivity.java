@@ -2,8 +2,8 @@ package com.ecommerce.bitirme.ecommerce.Activity;
 
 import android.content.Intent;
 import android.graphics.Paint;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -45,7 +45,7 @@ public class katagoriactivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                  Intent gec= new Intent(katagoriactivity.this,AddAdvert.class);
                 String s;
-                s= categories.get(i).getKatagoriName();
+
                   if(i==0){
                     s="Ev İlanı";
                 }
@@ -59,7 +59,7 @@ public class katagoriactivity extends AppCompatActivity {
                       s="Teknoloji İlanı";
                   }
                 else s="Taşıt ilanı";
-
+                s = categories.get(i).getKatagoriName();
                  gec.putExtra("session", s);
                  startActivity(gec);
             }
